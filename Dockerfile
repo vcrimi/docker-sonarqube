@@ -1,19 +1,21 @@
 FROM sonarqube:lts
 
-RUN chmod 777 /opt/sonarqube/temp
-RUN chmod 777 /opt/sonarqube/logs
-
-VOLUME /opt/sonarqube/
-VOLUME /opt/sonarqube/conf
-
-COPY setup.sh ./bin/setup.sh
-COPY start.sh ./bin/start.sh
-RUN chmod 777 ./bin/*.sh
 COPY ./rules/*.xml /opt/sonarqube/rules/
+COPY *.sh /opt/sonarqube/bin/
+
+RUN chmod 777 /opt/sonarqube/bin/start.sh && \
+    chmod 777 /opt/sonarqube/bin/setup.sh && \
+	chmod 777 /opt/sonarqube/logs && \
+	chmod 777 /opt/sonarqube/temp
 
 # Http port
 EXPOSE 9000
 
-ENTRYPOINT ["./bin/run.sh"]
+# Volumes
+VOLUME /opt/sonarqube/
+VOLUME /opt/sonarqube/conf
+
+
+ENTRYPOINT ["./bin/start.sh"]
 
 
