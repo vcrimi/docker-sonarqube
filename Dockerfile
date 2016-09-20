@@ -14,6 +14,6 @@ COPY ./rules/*.xml /opt/sonarqube/rules/
 # Http port
 EXPOSE 9000
 
-ENTRYPOINT ["./bin/start.sh"]
+ENTRYPOINT ["./bin/run.sh"]
 
 
