@@ -6,7 +6,7 @@ then
     echo "loading extensions..."
 	#wget -O /opt/sonarqube/extensions/plugins/sonar-ldap-plugin-1.5.1.jar   https://sonarsource.bintray.com/Distribution/sonar-ldap-plugin/sonar-ldap-plugin-1.5.1.jar
 	wget -O /opt/sonarqube/extensions/plugins/sonar-findbugs-plugin-3.3.jar https://sonarsource.bintray.com/Distribution/sonar-findbugs-plugin/sonar-findbugs-plugin-3.3.jar
-	wget -O /opt/sonarqube/extensions/plugins/sonar-java-plugin-3.8.jar     https://sonarsource.bintray.com/Distribution/sonar-java-plugin/sonar-java-plugin-3.8.jar
+	wget -O /opt/sonarqube/extensions/plugins/sonar-java-plugin-3.13.1.jar     https://sonarsource.bintray.com/Distribution/sonar-java-plugin/sonar-java-plugin-3.13.1.jar
 	
 	echo "importing // rules"
 	cd /opt/sonarqube/rules
