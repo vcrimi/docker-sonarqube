@@ -1,5 +1,6 @@
 FROM sonarqube:lts
 
+RUN ls
 RUN chmod 777 /opt/sonarqube/temp
 RUN chmod 777 /opt/sonarqube/logs
 
