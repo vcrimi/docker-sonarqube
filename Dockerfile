@@ -8,6 +8,7 @@ VOLUME /opt/sonarqube/conf
 
 COPY setup.sh ./bin/setup.sh
 COPY start.sh ./bin/start.sh
+RUN chmod 777 ./bin/*.sh
 COPY ./rules/*.xml /opt/sonarqube/rules/
 
 # Http port
