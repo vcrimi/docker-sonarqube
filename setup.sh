@@ -14,7 +14,7 @@ then
 	echo "importing // rules"
 	cd /opt/sonarqube/rules
 	while (! curl --silent --user admin:admin http://localhost:9000/api/qualityprofiles/restore) && (("$RETRY" < 10)); do sleep 5; let RETRY=RETRY+1; done ; \
-		for filename in *.xml; do curl --user admin:admin 'http://localhost:9000/api/qualityprofiles/restore' -X POST -F "backup=@$filename";	sleep 10; done; \
+	for filename in *.xml; do curl --user admin:admin 'http://localhost:9000/api/qualityprofiles/restore' -X POST -F "backup=@$filename";	sleep 10; done; \
 	echo "[-------------- Setup done. ---------------]" ; \
 	touch /opt/sonarqube/data/.import_done
 else
